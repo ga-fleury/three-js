@@ -8,20 +8,28 @@ class Gl {
   constructor() {
     this.scene = new THREE.Scene();
 
+    this.aspectRatio = window.innerWidth / window.innerHeight;
+
     this.camera = new THREE.PerspectiveCamera(
-      45,
+     70,
       window.innerWidth / window.innerHeight,
       0.1,
-      100
+      2
     );
 
-    this.camera.position.z = 1;
+    // this.cameraHelper = new THREE.CameraHelper(this.camera);
+    // this.scene.add(this.cameraHelper);
+
+
+    this.camera.position.z = .42;
+    console.log(this.camera.getWorldDirection());
+    console.log(this.camera.position);
     this.renderer = new THREE.WebGLRenderer({
       canvas: document.querySelector("#app"),
       antialias: true
     });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
-    this.renderer.setClearColor(0xffffff, 1);
+    this.renderer.setClearColor(0xffffff, 0);
 
     this.clock = new THREE.Clock();
 
@@ -49,6 +57,7 @@ class Gl {
     });
     this.mesh = new THREE.Mesh(this.geometry, this.material);
     this.scene.add(this.mesh);
+    this.mesh.position.x = .2;
   }
 
   addEvents() {

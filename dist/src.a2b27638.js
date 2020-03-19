@@ -184,7 +184,7 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"C:/Users/Gabriel Oliveira/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/styles.css":[function(require,module,exports) {
+},{"./bundle-url":"C:/Users/Gabriel Oliveira/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/styles.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -36212,14 +36212,19 @@ var Gl = /*#__PURE__*/function () {
     _classCallCheck(this, Gl);
 
     this.scene = new THREE.Scene();
-    this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
-    this.camera.position.z = 1;
+    this.aspectRatio = window.innerWidth / window.innerHeight;
+    this.camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 2); // this.cameraHelper = new THREE.CameraHelper(this.camera);
+    // this.scene.add(this.cameraHelper);
+
+    this.camera.position.z = .42;
+    console.log(this.camera.getWorldDirection());
+    console.log(this.camera.position);
     this.renderer = new THREE.WebGLRenderer({
       canvas: document.querySelector("#app"),
       antialias: true
     });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
-    this.renderer.setClearColor(0xffffff, 1);
+    this.renderer.setClearColor(0xffffff, 0);
     this.clock = new THREE.Clock();
     this.controls = new _OrbitControls.OrbitControls(this.camera, this.renderer.domElement);
     this.onResize();
@@ -36251,6 +36256,7 @@ var Gl = /*#__PURE__*/function () {
       });
       this.mesh = new THREE.Mesh(this.geometry, this.material);
       this.scene.add(this.mesh);
+      this.mesh.position.x = .2;
     }
   }, {
     key: "addEvents",
@@ -36289,7 +36295,7 @@ exports.default = _default;
 },{"three":"node_modules/three/build/three.module.js","three/examples/jsm/controls/OrbitControls":"node_modules/three/examples/jsm/controls/OrbitControls.js","./glsl/vertex.glsl":"src/gl/glsl/vertex.glsl","./glsl/fragment.glsl":"src/gl/glsl/fragment.glsl","../assets/mannequin.jpg":"src/assets/mannequin.jpg"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
-require("./styles.css");
+require("./styles.scss");
 
 var _gl = _interopRequireDefault(require("./gl"));
 
@@ -36297,7 +36303,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var scene = new _gl.default();
 scene.init();
-},{"./styles.css":"src/styles.css","./gl":"src/gl/index.js"}],"C:/Users/Gabriel Oliveira/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./styles.scss":"src/styles.scss","./gl":"src/gl/index.js"}],"C:/Users/Gabriel Oliveira/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -36325,7 +36331,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54318" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58970" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
