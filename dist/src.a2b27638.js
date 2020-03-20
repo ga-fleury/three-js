@@ -184,12 +184,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"C:/Users/Gabriel Oliveira/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/styles.scss":[function(require,module,exports) {
+},{"./bundle-url":"C:/Users/Gabriel Oliveira/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/assets/css/main.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"C:/Users/Gabriel Oliveira/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/three/build/three.module.js":[function(require,module,exports) {
+},{"./..\\font\\dreamscape-webfont.woff2":[["dreamscape-webfont.d2e1df36.woff2","src/assets/font/dreamscape-webfont.woff2"],"src/assets/font/dreamscape-webfont.woff2"],"./..\\font\\dreamscape-webfont.woff":[["dreamscape-webfont.5a7da141.woff","src/assets/font/dreamscape-webfont.woff"],"src/assets/font/dreamscape-webfont.woff"],"_css_loader":"C:/Users/Gabriel Oliveira/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/three/build/three.module.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36224,7 +36224,7 @@ var Gl = /*#__PURE__*/function () {
       antialias: true
     });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
-    this.renderer.setClearColor(0xffffff, 0);
+    this.renderer.setClearColor(0x1b1118, 1);
     this.clock = new THREE.Clock();
     this.controls = new _OrbitControls.OrbitControls(this.camera, this.renderer.domElement);
     this.onResize();
@@ -36295,7 +36295,7 @@ exports.default = _default;
 },{"three":"node_modules/three/build/three.module.js","three/examples/jsm/controls/OrbitControls":"node_modules/three/examples/jsm/controls/OrbitControls.js","./glsl/vertex.glsl":"src/gl/glsl/vertex.glsl","./glsl/fragment.glsl":"src/gl/glsl/fragment.glsl","../assets/mannequin.jpg":"src/assets/mannequin.jpg"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
-require("./styles.scss");
+require("./assets/css/main.scss");
 
 var _gl = _interopRequireDefault(require("./gl"));
 
@@ -36303,7 +36303,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var scene = new _gl.default();
 scene.init();
-},{"./styles.scss":"src/styles.scss","./gl":"src/gl/index.js"}],"C:/Users/Gabriel Oliveira/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./assets/css/main.scss":"src/assets/css/main.scss","./gl":"src/gl/index.js"}],"C:/Users/Gabriel Oliveira/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -36331,7 +36331,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58970" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52398" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

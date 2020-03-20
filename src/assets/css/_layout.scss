@@ -1,0 +1,53 @@
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  animation: fadeInDown 1s 0s linear forwards;
+}
+
+header {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  margin: 0 auto;
+  color: $color-text;
+  font-family: "Roboto Mono", monospace;
+  padding: $padding;
+}
+
+.left {
+  &__title {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  &__link {
+    font-weight: bold;
+    &:hover {
+      color: #c4c4c4;
+    }
+  }
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+}
+
+.hero__title {
+  font-family: "dreamscaperegular";
+  font-size: 10rem;
+  color: rgb(77, 255, 204);
+  opacity: 0.6;
+  text-shadow: 2px 0px 20px rgb(36, 255, 193), 0px 2px 20px rgb(36, 255, 193),
+    -2px 0px 20px rgb(36, 255, 193), 0px -2px 20px rgb(36, 255, 193);
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  letter-spacing: 15px;
+  animation: heroTitle 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}

@@ -1,0 +1,39 @@
+/* Color Theme Swatches in Hex */
+$color-lighter: #8449bf;
+$color-primary: #4e458c;
+$color-darker: #3e3c73;
+$color-bg: #1b1118;
+$color-accent: #4ebfd9;
+
+$color-text: rgb(74, 74, 74);
+
+$padding: 2rem;
+
+@font-face {
+  font-family: "dreamscaperegular";
+  src: url("../font/dreamscape-webfont.woff2") format("woff2"),
+    url("../font/dreamscape-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  overflow: hidden;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: $color-bg;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

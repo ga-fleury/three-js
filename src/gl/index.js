@@ -29,7 +29,7 @@ class Gl {
       antialias: true
     });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
-    this.renderer.setClearColor(0xffffff, 0);
+    this.renderer.setClearColor(0x1b1118, 1);
 
     this.clock = new THREE.Clock();
 
