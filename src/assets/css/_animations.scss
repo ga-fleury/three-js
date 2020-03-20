@@ -52,17 +52,24 @@ $fade-animations: fadeIn, fadeInDown, fadeInUp, fadeInLeft, fadeInRight;
 @keyframes heroTitle {
   0% {
     opacity: 0;
-    text-shadow:  2px 0px 20px rgb(36, 255, 193), 
-                  0px 2px 20px rgb(36, 255, 193),
-                  -2px 0px 20px rgb(36, 255, 193), 
-                  0px -2px 20px rgb(36, 255, 193);
+    text-shadow:  2px 0px 20px rgba(36, 255, 193, 1), 
+                  0px 2px 20px rgba(36, 255, 193, 1),
+                  -2px 0px 20px rgba(36, 255, 193, 1), 
+                  0px -2px 20px rgba(36, 255, 193, 1);
+  }
+  10% {
+    text-shadow:  2px 0px 20px rgba(36, 255, 193, 1), 
+                  0px 2px 20px rgba(36, 255, 193, 1),
+                  -2px 0px 20px rgba(36, 255, 193, 1), 
+                  0px -2px 20px rgba(36, 255, 193, 1);
+
   }
   100% {
-    opacity: 1;
-    text-shadow:  2px 0px 4px rgb(36, 255, 193), 
-                  0px 2px 4px rgb(36, 255, 193),
-                  -2px 0px 4px rgb(36, 255, 193),
-                  0px -2px 4px rgb(36, 255, 193);
+    opacity: .9;
+    text-shadow:  2px 0px 4px rgba(36, 255, 193, 0.7), 
+                  0px 2px 4px rgba(36, 255, 193, 0.7),
+                  -2px 0px 4px rgba(36, 255, 193, 0.7),
+                  0px -2px 4px rgba(36, 255, 193, 0.7);
   }
 }
 

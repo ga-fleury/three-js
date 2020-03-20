@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import vertexShader from "./glsl/vertex.glsl";
 import fragmentShader from "./glsl/fragment.glsl";
-import img from "../assets/mannequin.jpg";
+import img from "../assets/mannequin.webp";
 
 class Gl {
   constructor() {
@@ -33,7 +33,7 @@ class Gl {
 
     this.clock = new THREE.Clock();
 
-    this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+    // this.controls = new OrbitControls(this.camera, this.renderer.domElement);
 
     this.onResize();
   }
@@ -58,6 +58,9 @@ class Gl {
     this.mesh = new THREE.Mesh(this.geometry, this.material);
     this.scene.add(this.mesh);
     this.mesh.position.x = .2;
+    if (screen.width <= 699) {
+      this.mesh.position.x = 0;
+    }
   }
 
   addEvents() {
