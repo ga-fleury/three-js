@@ -8,6 +8,7 @@
     "build": "parcel build index.html --no-source-maps"
   },
   "dependencies": {
+    "gsap": "^3.2.5",
     "three": "^0.114.0"
   },
   "devDependencies": {

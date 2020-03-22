@@ -1,8 +1,9 @@
 import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+// import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import vertexShader from "./glsl/vertex.glsl";
 import fragmentShader from "./glsl/fragment.glsl";
 import img from "../assets/mannequin.webp";
+import img2 from "../assets/mannequin2.jpg";
 
 class Gl {
   constructor() {
@@ -11,7 +12,7 @@ class Gl {
     this.aspectRatio = window.innerWidth / window.innerHeight;
 
     this.camera = new THREE.PerspectiveCamera(
-     70,
+      70,
       window.innerWidth / window.innerHeight,
       0.1,
       2
@@ -20,10 +21,7 @@ class Gl {
     // this.cameraHelper = new THREE.CameraHelper(this.camera);
     // this.scene.add(this.cameraHelper);
 
-
-    this.camera.position.z = .42;
-    console.log(this.camera.getWorldDirection());
-    console.log(this.camera.position);
+    this.camera.position.z = 0.42;
     this.renderer = new THREE.WebGLRenderer({
       canvas: document.querySelector("#app"),
       antialias: true
@@ -55,9 +53,12 @@ class Gl {
       // wireframe: true,
       side: THREE.DoubleSide
     });
+
+    console.log(this.material.uniforms.uTexture.value);
+
     this.mesh = new THREE.Mesh(this.geometry, this.material);
     this.scene.add(this.mesh);
-    this.mesh.position.x = .2;
+    this.mesh.position.x = 0.2;
     if (screen.width <= 699) {
       this.mesh.position.x = 0;
     }
@@ -66,12 +67,15 @@ class Gl {
   addEvents() {
     window.requestAnimationFrame(this.run.bind(this));
     window.addEventListener("resize", this.onResize.bind(this), false);
+    window.addEventListener("click", onBtnCLick);
   }
+
 
   run() {
     requestAnimationFrame(this.run.bind(this));
     this.render();
   }
+  
 
   render() {
     this.material.uniforms.uTime.value = this.clock.getElapsedTime();
